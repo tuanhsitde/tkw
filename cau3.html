@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <section id="informationCar"></section>
+    <script>
+
+        let products = '{ "car" : [' +
+            '{ "name":"BMW 730Li M Sport" , "color":"Yellow Sand Gray Line", "price": "5.900.000", "description": "4 Seats", "type": "Sedan", "image" : "https://images.kb-qatar.com/11195/c43e/knightsbridge-automotive-lg.jpg" },' +
+            '{ "name":"Bentley FlyingSpur V8 2021" , "color":"Azure Candy Red", "price": "15.900.000", "description": "4 Seats", "type": "Sedan", "image" :"https://static1.cafeland.vn/cafeautoData/upload/tintuc/thitruong/2021/09/tuan-01/1-1630970576.jpg"},' +
+            '{ "name":"RollsRoyce Ghost Extended Black Edition" , "color":"Arctic White", "price": "15.900.000", "description": "4 Seats", "type": "Sedan", "image" :"https://www.bentleygoldcoast.com/imagetag/9357/2/l/Used-2021-Rolls-Royce-Ghost-EXTENDED-WHEELBASE-EWB-1638555360.jpg"},' +
+            '{ "name":"Lamborghini Urus S" , "color":"Oryx Blue Pearl", "price": "45.900.000", "description": "4 Seats", "type": "SUV", "image" :"https://www.goldcoastautogallery.com/galleria_images/10667/10667_p2_l.jpg"},' +
+            '{ "name":"Lamborghini Aventador SVJ 740LP" , "color":"Blue Carbon", "price": "50.900.000", "description": "2 Seats", "type" : "Sport car", "image" : "https://www.motortrend.com/uploads/sites/5/2020/02/2020-Lamborghini-Aventador-SVJ-Roadster-45.jpg" } ]}';
+
+
+
+
+        let objProducts = JSON.parse(products)
+        const newArr = objProducts.car.map((item) => {
+            return `
+                <div>
+                <img src="${item.image}" alt=""/>
+                ${item.name}
+                </div>
+                `;
+        })
+        document.getElementById("informationCar").innerHTML = newArr;
+
+
+    </script>
+</body>
+</html>
